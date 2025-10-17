@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 export default function Dashboard() {
   const shoppingLists = [
-    { id: 1, title: "Compras del mes", total: 12, date: "2025-11-01", budget: 150 },
-    { id: 2, title: "Fiesta familiar", total: 18, date: "2025-10-25", budget: 200 },
-    { id: 3, title: "Despensa básica", total: 8, budget: 80 },
+    { id: 1, title: "Compras del mes", total: 12, date: "2025-11-01", budget: 150000 },
+    { id: 2, title: "Fiesta familiar", total: 18, date: "2025-10-25", budget: 200000 },
+    { id: 3, title: "Despensa básica", total: 8, budget: 80000 },
     { id: 4, title: "Fin de semana", total: 5, date: "2025-10-20" },
   ];
 

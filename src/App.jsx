@@ -7,7 +7,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import ShoppingListView from "./pages/ShoppingListView";
 import CreateList from "./pages/CreateList";
-import NotFound from "./pages/NotFound"; // asegúrate de tener esta página o crea una
+import NotFound from "./pages/NotFound"; 
 
 const queryClient = new QueryClient();
 
