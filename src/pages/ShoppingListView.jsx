@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { ArrowLeft, Plus, Minus, X } from "lucide-react";
 import logoCanasta from "@/assets/la-canasta-logo-sin-texto.png";
 
-// ✅ Simulamos las mismas listas del Dashboard
 const shoppingLists = [
   { id: 1, title: "Compras del mes", total: 12, date: "2025-11-01", budget: 150000 },
   { id: 2, title: "Fiesta familiar", total: 18, date: "2025-10-25", budget: 200000 },
