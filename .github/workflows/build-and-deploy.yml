@@ -30,7 +30,7 @@ jobs:
         run: |
           BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
           MESSAGE="Deploy from ${BRANCH} - $(git log -1 --pretty=%B)"
-          URL=$(npx netlify deploy --dir=dist --json | jq -r '.url')
+          URL=$(npx netlify deploy --prod --dir=dist --message "$MESSAGE" --json | jq -r '.url')
           echo "url=$URL" >> $GITHUB_OUTPUT
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
