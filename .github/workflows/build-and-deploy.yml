@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +24,6 @@ jobs:
 
       - name: Run linter
         run: npm run lint
-
-      - name: Build project
-        run: npm run build
 
       - name: Deploy to Netlify
         run: npx netlify deploy --prod --dir=dist
