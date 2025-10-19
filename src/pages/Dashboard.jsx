@@ -1,7 +1,6 @@
 import { DashboardHeader } from "@/components/DashboardHeader";
 import { ShoppingListCard } from "@/components/ShoppingListCard";
 import { motion } from "framer-motion";
-import { DashboardLayout } from "@/layouts/DashboardLayout";
 
 export default function Dashboard() {
   const shoppingLists = [
@@ -12,8 +11,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <DashboardLayout>
-      <div>
+    <div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,6 +37,5 @@ export default function Dashboard() {
         </motion.div>
       </motion.div>
     </div>
-    </DashboardLayout>
   );
 }

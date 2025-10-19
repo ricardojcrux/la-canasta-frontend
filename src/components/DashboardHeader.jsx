@@ -36,9 +36,9 @@ export function DashboardHeader() {
       <Button
         asChild
         size="lg"
-        className="gap-2 bg-[#F15A29] hover:bg-[#d94f23] text-white font-semibold shadow-md"
+        className="gap-2 bg-secondary hover:bg-secondary-hover text-white font-semibold shadow-md"
       >
-        <Link to="/new-list">
+        <Link to="/lists/create">
           <Plus className="h-5 w-5" />
           Nueva Lista
         </Link>
