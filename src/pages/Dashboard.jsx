@@ -1,6 +1,7 @@
-import { DashboardHeader } from "@/components/ui/DashboardHeader";
-import { ShoppingListCard } from "@/components/ui/ShoppingListCard";
+import { DashboardHeader } from "@/components/DashboardHeader";
+import { ShoppingListCard } from "@/components/ShoppingListCard";
 import { motion } from "framer-motion";
+import { DashboardLayout } from "@/layouts/DashboardLayout";
 
 export default function Dashboard() {
   const shoppingLists = [
@@ -11,7 +12,8 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] via-white to-[#f0fdf4] p-6 sm:p-10">
+    <DashboardLayout>
+      <div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -37,5 +39,6 @@ export default function Dashboard() {
         </motion.div>
       </motion.div>
     </div>
+    </DashboardLayout>
   );
 }

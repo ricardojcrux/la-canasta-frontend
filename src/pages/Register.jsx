@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { AuthLayout } from "@/components/ui/AuthLayout";
+import { AuthLayout } from "@/layouts/AuthLayout";
 import { motion } from "framer-motion";
 
 export default function Register() {
@@ -18,7 +18,7 @@ export default function Register() {
     <AuthLayout>
       <Card className="shadow-[var(--shadow-card)] border border-gray-100">
         <CardContent className="p-6">
-          <h2 className="mb-6 text-2xl font-bold text-center text-[#007C89]">
+          <h2 className="mb-6 text-2xl font-bold text-center text-primary">
             Crear Cuenta
           </h2>
 
@@ -28,13 +28,13 @@ export default function Register() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <Label htmlFor="name" className="text-[#007C89]">
+              <Label htmlFor="name" className="text-primary">
                 Nombre
               </Label>
               <Input
                 id="name"
                 placeholder="Juan"
-                className="mt-1 focus-visible:ring-[#007C89]"
+                className="mt-1 focus-visible:ring-primary"
                 required
               />
             </motion.div>
@@ -44,13 +44,13 @@ export default function Register() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.35 }}
             >
-              <Label htmlFor="lastname" className="text-[#007C89]">
+              <Label htmlFor="lastname" className="text-primary">
                 Apellido
               </Label>
               <Input
                 id="lastname"
                 placeholder="Pérez"
-                className="mt-1 focus-visible:ring-[#007C89]"
+                className="mt-1 focus-visible:ring-primary"
                 required
               />
             </motion.div>
@@ -60,14 +60,14 @@ export default function Register() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <Label htmlFor="email" className="text-[#007C89]">
+              <Label htmlFor="email" className="text-primary">
                 Correo electrónico
               </Label>
               <Input
                 id="email"
                 type="email"
                 placeholder="usuario@correo.com"
-                className="mt-1 focus-visible:ring-[#007C89]"
+                className="mt-1 focus-visible:ring-primary"
                 required
               />
             </motion.div>
@@ -77,14 +77,14 @@ export default function Register() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.45 }}
             >
-              <Label htmlFor="password" className="text-[#007C89]">
+              <Label htmlFor="password" className="text-primary">
                 Contraseña
               </Label>
               <Input
                 id="password"
                 type="password"
                 placeholder="••••••••"
-                className="mt-1 focus-visible:ring-[#007C89]"
+                className="mt-1 focus-visible:ring-primary"
                 required
               />
             </motion.div>
@@ -96,7 +96,7 @@ export default function Register() {
             >
               <Button
                 type="submit"
-                className="w-full bg-[#F15A29] hover:bg-[#d94f23] text-white font-semibold"
+                className="w-full bg-secondary hover:bg-secondary-hover text-white font-semibold hover:cursor-pointer"
               >
                 Registrarse
               </Button>
@@ -111,7 +111,7 @@ export default function Register() {
               ¿Ya tienes cuenta?{" "}
               <Link
                 to="/login"
-                className="font-semibold text-[#007C89] hover:underline"
+                className="font-semibold text-primary hover:underline"
               >
                 Inicia sesión
               </Link>

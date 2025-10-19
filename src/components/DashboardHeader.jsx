@@ -25,7 +25,7 @@ export function DashboardHeader() {
 
         {/* Texto */}
         <div>
-          <h1 className="text-3xl font-bold text-[#007C89]">Mis Listas</h1>
+          <h1 className="text-3xl font-bold text-primary">Mis Listas</h1>
           <p className="text-sm text-gray-600">
             Organiza tus compras fácilmente
           </p>
