@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { DashboardLayout } from './layouts/DashboardLayout';
 import { AuthLayout } from './layouts/AuthLayout';
 import Login from './pages/Login';
@@ -21,46 +21,20 @@ const DashboardWrapper = () => (
   </DashboardLayout>
 );
 
-// Routes configuration
-export const routes = [
-  {
-    path: '/',
-    element: <Navigate to="/dashboard" replace />,
-  },
-  {
-    element: <AuthWrapper />,
-    children: [
-      {
-        path: 'login',
-        element: <Login />,
-      },
-      {
-        path: 'register',
-        element: <Register />,
-      },
-    ],
-  },
-  {
-    element: <DashboardWrapper />,
-    children: [
-      {
-        path: 'dashboard',
-        element: <Dashboard />,
-      },
-      {
-        path: 'lists/create',
-        element: <CreateList />,
-      },
-      {
-        path: 'lists/:id',
-        element: <ShoppingListView />,
-      },
-    ],
-  },
-  {
-    path: '*',
-    element: <NotFound />,
-  },
-];
-
-export default routes;
+export default function AppRouter() {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route element={<AuthWrapper />}>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Route>
+      <Route element={<DashboardWrapper />}>
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="lists/create" element={<CreateList />} />
+        <Route path="lists/:id" element={<ShoppingListView />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
