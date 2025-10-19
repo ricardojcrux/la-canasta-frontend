@@ -26,19 +26,25 @@ jobs:
         run: npm run lint
 
       - name: Deploy to Netlify
-        run: npx netlify deploy --prod --dir=dist
+        id: netlify
+        run: |
+          BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
+          MESSAGE="Deploy from ${BRANCH} - $(git log -1 --pretty=%B)"
+          URL=$(npx netlify deploy --dir=dist --json | jq -r '.url')
+          echo "url=$URL" >> $GITHUB_OUTPUT
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-
+      
       - name: Comment PR with deployment URL
         if: github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
-            script: |
-              github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: `✅ Deployed successfully to Netlify!\n🔗 Preview: ${{ steps.netlify.outputs.url }}`
-              })
+          script: |
+            const message = `✅ **Deploy Preview Ready**\n🔗 [${{ steps.netlify.outputs.url }}](${{ steps.netlify.outputs.url }})\n📝 ${process.env.GITHUB_HEAD_REF} - ${process.env.GITHUB_SHA.substring(0,7)}`;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: message
+            })
