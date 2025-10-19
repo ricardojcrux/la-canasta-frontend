@@ -17,11 +17,11 @@ export function ShoppingListCard({ id, title, total, date, budget, index }) {
           {/* Título y productos */}
           <div className="mb-4 flex items-start justify-between">
             <div className="flex-1">
-              <h2 className="mb-2 text-xl font-semibold text-[#007C89]">
+              <h2 className="mb-2 text-xl font-semibold text-primary">
                 {title}
               </h2>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <ShoppingCart className="h-4 w-4 text-[#F15A29]" />
+                <ShoppingCart className="h-4 w-4 text-primary" />
                 <span>{total} productos</span>
               </div>
             </div>
@@ -32,16 +32,16 @@ export function ShoppingListCard({ id, title, total, date, budget, index }) {
             <div className="mb-4 space-y-2 border-t border-gray-100 pt-3">
               {date && (
                 <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <Calendar className="h-4 w-4 text-[#F15A29]" />
+                  <Calendar className="h-4 w-4 text-primary" />
                   <span>{new Date(date).toLocaleDateString()}</span>
                 </div>
               )}
               {budget && (
                 <div className="flex items-center gap-2 text-sm text-gray-600">
-                  <DollarSign className="h-4 w-4 text-[#F15A29]" />
+                  <DollarSign className="h-4 w-4 text-primary" />
                   <span>
                     Presupuesto:{" "}
-                    <span className="font-semibold text-[#007C89]">
+                    <span className="font-semibold text-primary">
                       ${budget}
                     </span>
                   </span>
@@ -53,9 +53,9 @@ export function ShoppingListCard({ id, title, total, date, budget, index }) {
           {/* Botón Ver Lista */}
           <Button
             asChild
-            className="w-full bg-[#F15A29] hover:bg-[#d94f23] text-white font-semibold rounded-xl shadow-md transition-all duration-200"
+            className="w-full bg-secondary hover:bg-secondary-hover text-white font-semibold rounded-xl shadow-md transition-all duration-200"
           >
-            <Link to={`/list/${id}`}>Ver Lista</Link>
+            <Link to={`/lists/${id}`}>Ver Lista</Link>
           </Button>
         </CardContent>
       </Card>

@@ -1,5 +1,5 @@
-import { DashboardHeader } from "@/components/ui/DashboardHeader";
-import { ShoppingListCard } from "@/components/ui/ShoppingListCard";
+import { DashboardHeader } from "@/components/DashboardHeader";
+import { ShoppingListCard } from "@/components/ShoppingListCard";
 import { motion } from "framer-motion";
 
 export default function Dashboard() {
@@ -11,7 +11,7 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8fafc] via-white to-[#f0fdf4] p-6 sm:p-10">
+    <div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

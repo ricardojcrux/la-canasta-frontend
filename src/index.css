@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
+@theme {
+  --color-primary: #007C89;
+  --color-primary-hover: #005B6B;
+  --color-secondary: #F15A29;
+  --color-secondary-hover: #d94f23;
+}
+
 /* === Estilos base === */
 @layer base {
   :root {

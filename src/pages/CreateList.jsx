@@ -24,44 +24,45 @@ export default function CreateList() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-[#f8fafc] via-white to-[#f0fdf4] p-4">
+    <div className="flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="w-full max-w-md relative"
       >
-        {/* Botón volver */}
-        <Button
-          variant="ghost"
-          onClick={() => navigate("/dashboard")}
-          className="mb-4 gap-2 text-[#007C89] hover:bg-[#e8f6f4]"
-        >
-          <ArrowLeft className="h-4 w-4" /> Volver
-        </Button>
+        <div className="flex flex-row gap-4 justify-between">
+          {/* Logo y título */}
+          <div className="flex items-center gap-3">
+            {/* Logo */}
+            <div className="flex items-center justify-center">
+              <img
+                src={logoCanasta}
+                alt="Logo La Canasta"
+                className="w-10 h-auto drop-shadow-md" // 🔹 Más pequeño y proporcionado
+              />
+            </div>
 
-        {/* Encabezado con logo */}
-        <div className="mb-8 flex flex-col items-center text-center">
-          <motion.img
-            src={logoCanasta}
-            alt="Logo La Canasta"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-            className="mb-4 w-20 h-auto drop-shadow-md"
-          />
-          <motion.h1
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="text-3xl font-bold text-[#1f2937]"
+            {/* Texto */}
+            <div>
+              <h1 className="text-3xl font-bold text-primary">Nueva Lista</h1>
+              <p className="text-sm text-gray-600">
+                Organiza tu próxima compra
+              </p>
+            </div>
+          </div>
+          {/* Botón volver */}
+          <Button
+            variant="ghost"
+            onClick={() => navigate("/dashboard")}
+            className="gap-2 text-primary hover:bg-primary hover:text-white"
           >
-            Nueva Lista
-          </motion.h1>
-          <p className="mt-2 text-sm text-gray-500">
-            Organiza tus próximas compras
-          </p>
+            <ArrowLeft className="h-4 w-4" /> Volver
+          </Button>
         </div>
+
+        {/* Línea divisoria sutil */}
+        <div className="border-t border-gray-200 my-6"></div>
 
         {/* Formulario principal */}
         <Card className="shadow-[var(--shadow-card)]">
@@ -91,11 +92,11 @@ export default function CreateList() {
               </div>
 
               {/* Botones */}
-              <div className="flex justify-between items-center mt-6">
+              <div className="flex justify-between items-center">
                 <Button
                   type="button"
+                  variant="outline"
                   onClick={() => setShowAddModal(true)}
-                  className="bg-[#f97316] hover:bg-[#ea580c] text-white"
                 >
                   + Agregar Producto
                 </Button>

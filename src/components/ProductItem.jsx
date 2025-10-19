@@ -4,7 +4,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Package } from 'lucide-react';
 import { useState } from 'react';
 
-export function ProductItem({ id, name, quantity, purchased: initialPurchased, index }) {
+export function ProductItem({ name, quantity, purchased: initialPurchased, index }) {
   const [purchased, setPurchased] = useState(initialPurchased);
 
   return (
